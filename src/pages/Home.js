@@ -24,7 +24,8 @@ function Home({ isAuth }) {
         <div className="homePage">
             {postLists.map((post) => {
                 return (
-                    <div className="post">
+
+                <div className="post">
                         <div className="postHeader">
                             <div className="title">
                                 <h1> {post.title}</h1>
@@ -39,7 +40,6 @@ function Home({ isAuth }) {
                                         X
                                     </button>
                                 )}
-                                {console.log(isAuth)}
                             </div>
                         </div>
                         <div className="postTextContainer"> {post.postText} </div>

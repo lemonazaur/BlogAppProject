@@ -1,6 +1,5 @@
-import logo from './logo.svg';
 import './App.css';
-import {BrowserRouter as Router, Routes, Route, Link, useNavigate} from "react-router-dom";
+import {BrowserRouter as Router, Routes, Route, Link} from "react-router-dom";
 import Home from "./pages/Home"
 import Login from "./pages/Login"
 import CreatePost from "./pages/CreatePost";
@@ -14,7 +13,7 @@ function App() {
         signOut(auth).then(()=> {
             localStorage.clear();
             setIsAuth(false);
-            window.location.pathname = "/login"
+            window.location.pathname = "/"
         });
     }
   return (
@@ -28,8 +27,8 @@ function App() {
                 </>}
         </nav>
       <Routes>
-        <Route path="/" element={ <Home />} />
-        <Route path="/createpost" element={ <CreatePost isAuth={isAuth}/>} />
+          <Route path="/" element={<Home isAuth={isAuth} />} />
+          <Route path="/createpost" element={ <CreatePost isAuth={isAuth}/>} />
         <Route path="/login" element={ <Login setIsAuth={setIsAuth}/>} />
       </Routes>
     </Router>
